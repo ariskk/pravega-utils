@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  pravega:
+    image: "pravega/pravega"
+    ports:
+      - "9090:9090"
+      - "9091:9091"
+      - "12345:12345"
+    networks:
+      - esnet
+    environment:
+      - HOST_IP=127.0.0.1
+
+networks:
+  esnet:
+    driver: bridge
